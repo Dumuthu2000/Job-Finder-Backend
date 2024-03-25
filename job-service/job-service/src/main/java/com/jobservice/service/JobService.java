@@ -3,12 +3,12 @@ package com.jobservice.service;
 
 import com.jobservice.model.Job;
 import com.jobservice.repository.JobRepository;
-import com.jobservice.response.LoginCompanyJobs;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class JobService {
@@ -29,5 +29,13 @@ public class JobService {
     public List<Job> getJobsByCompanyName(String companyName) {
         List<Job> jobs = (List<Job>) jobRepository.findJobByCompanyName(companyName);
         return jobs;
+    }
+
+    public Job updateJobByJobId(Job job) {
+        return jobRepository.save(job);
+    }
+
+    public Optional<Job> getJobById(int jobID) {
+        return jobRepository.findById(jobID);
     }
 }

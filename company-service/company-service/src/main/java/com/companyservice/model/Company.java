@@ -22,4 +22,6 @@ public class Company {
     private String contactDetails;
     private String email;
     private String password;
+    private String backImage;
+    private String profileImage;
 }
