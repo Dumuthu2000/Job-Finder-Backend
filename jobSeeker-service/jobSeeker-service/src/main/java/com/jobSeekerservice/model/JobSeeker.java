@@ -12,8 +12,10 @@ public class JobSeeker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int jobSeekerId;
-    private String FullName;
+    private String firstName;
+    private String lastName;
     private int age;
+    private String address;
     private String gender;
     private String email;
     private String password;

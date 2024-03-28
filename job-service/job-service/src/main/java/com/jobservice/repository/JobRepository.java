@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface JobRepository extends JpaRepository<Job, Integer> {
-    @Query(nativeQuery = true, value ="SELECT * FROM job j WHERE j.company_name= :companyName")
-    List<Job> findJobByCompanyName(@Param("companyName") String companyName);
+    @Query(nativeQuery = true, value ="SELECT * FROM job j WHERE j.company_id= :companyId")
+    List<Job> findByCompanyId(@Param("companyId") int companyId);
 }

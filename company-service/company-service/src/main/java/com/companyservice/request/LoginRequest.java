@@ -1,4 +1,4 @@
-package com.companyservice.response;
+package com.companyservice.request;
 
 import lombok.Data;
 

@@ -25,17 +25,19 @@ public class JobService {
     public List<Job> getAllJobs() throws Exception{
         return jobRepository.findAll();
     }
-
-    public List<Job> getJobsByCompanyName(String companyName) {
-        List<Job> jobs = (List<Job>) jobRepository.findJobByCompanyName(companyName);
-        return jobs;
+    public List<Job> getJobsByCompanyId(int companyID) {
+        return jobRepository.findByCompanyId(companyID);
     }
-
     public Job updateJobByJobId(Job job) {
         return jobRepository.save(job);
     }
 
     public Optional<Job> getJobById(int jobID) {
         return jobRepository.findById(jobID);
+    }
+
+
+    public void deleteJobById(int jobID) {
+        jobRepository.deleteById(jobID);
     }
 }

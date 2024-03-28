@@ -22,4 +22,5 @@ public class Job {
     private String companyName;
     private LocalDate deadline;
     private String location;
+    private int companyId;
 }

@@ -1,7 +1,8 @@
 package com.companyservice.controller;
 
 import com.companyservice.model.Company;
-import com.companyservice.response.LoginRequest;
+import com.companyservice.request.LoginRequest;
+import com.companyservice.response.LoginResponse;
 import com.companyservice.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/company-service/api")
@@ -31,8 +33,14 @@ public class CompanyController {
 
     //Login Company
     @PostMapping(path = "/company/login")
-    public ResponseEntity<Company> loginCompany(@RequestBody LoginRequest loginRequest) throws Exception{
-        Company company = companyService.loginCompany(loginRequest.getEmail(), loginRequest.getPassword());
-        return ResponseEntity.status(HttpStatus.OK).body(company);
+    public ResponseEntity<LoginResponse> loginCompany(@RequestBody LoginRequest loginRequest) throws Exception{
+        LoginResponse loginResponse = companyService.loginCompany(loginRequest.getEmail(), loginRequest.getPassword());
+        return ResponseEntity.status(HttpStatus.OK).body(loginResponse);
+    }
+
+    //Get logged company details
+    @GetMapping(path = "/company/{companyId}")
+    public ResponseEntity<Optional<Company>> getCompanyById(@PathVariable int companyId){
+        return ResponseEntity.status(HttpStatus.OK).body(companyService.getCompanyById(companyId));
     }
 }

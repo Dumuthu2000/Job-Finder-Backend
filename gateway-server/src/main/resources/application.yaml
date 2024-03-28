@@ -19,6 +19,16 @@ spring:
           predicates:
             - Path=/company-service/**
 
+        - id: JOB-SEEKER-SERVICE
+          uri: lb://JOB-SEEKER-SERVICE
+          predicates:
+            - Path=/job-seeker-service/**
+
+        - id: APPLICATION-SERVICE
+          uri: lb://APPLICATION-SERVICE
+          predicates:
+            - Path=/application-service/**
+
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
