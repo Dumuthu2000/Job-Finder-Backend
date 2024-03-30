@@ -2,6 +2,7 @@ package com.companyservice.service;
 
 import com.companyservice.model.Company;
 import com.companyservice.repository.CompanyRepository;
+import com.companyservice.response.JobRelatedDetails;
 import com.companyservice.response.LoginResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,5 @@ public class CompanyService {
     public Optional<Company> getCompanyById(int companyId) {
         return companyRepository.findById(companyId);
     }
+
 }

@@ -1,6 +1,7 @@
 package com.companyservice.repository;
 
 import com.companyservice.model.Company;
+import com.companyservice.response.JobRelatedDetails;
 import com.companyservice.response.LoginResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

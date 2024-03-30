@@ -23,4 +23,5 @@ public class Job {
     private LocalDate deadline;
     private String location;
     private int companyId;
+    private String profileImage;
 }

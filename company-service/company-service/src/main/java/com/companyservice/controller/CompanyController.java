@@ -2,6 +2,7 @@ package com.companyservice.controller;
 
 import com.companyservice.model.Company;
 import com.companyservice.request.LoginRequest;
+import com.companyservice.response.JobRelatedDetails;
 import com.companyservice.response.LoginResponse;
 import com.companyservice.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +44,5 @@ public class CompanyController {
     public ResponseEntity<Optional<Company>> getCompanyById(@PathVariable int companyId){
         return ResponseEntity.status(HttpStatus.OK).body(companyService.getCompanyById(companyId));
     }
+
 }
